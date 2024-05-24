@@ -1,4 +1,3 @@
--- Creating the employees table
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
     first_name VARCHAR(50),
