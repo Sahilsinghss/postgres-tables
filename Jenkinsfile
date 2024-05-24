@@ -31,10 +31,14 @@ pipeline {
             steps {
                 script {
                     openshift.withCluster(env.CLUSTER, env.OPENSHIFTCREDENTIALS) {
+                        echo "1"
                         openshift.withProject(OPENSHIFT_PROJECT) {
                             // Get the pods associated with the deployment
+                            echo "2"
                             def pods = openshift.selector('deploymentconfig', DEPLOYMENT_NAME).related('pods')
+                            echo "3"
                             def podNames = pods.names()
+                            echo "4"
 
                             // Ensure there's at least one pod
                             if (podNames.size() == 0) {
@@ -47,7 +51,9 @@ pipeline {
 
                             // Copy the SQL script to the pod
                             def sqlContent = readFile(file: SQL_SCRIPT)
+                            echo "5"
                             openshift.selector('pod', podName).exec('/bin/sh', '-c', "echo '${sqlContent}' > /tmp/script.sql")
+                            echo "6"
                         }
                     }
                 }
