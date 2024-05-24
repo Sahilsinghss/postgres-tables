@@ -38,9 +38,9 @@ pipeline {
                             echo "Found PostgreSQL pod: ${POD_NAME}"
 
                             // Copy the SQL script to the pod
-                            def sqlContent = sh(script: "cat ${SQL_SCRIPT}", returnStdout: true).trim()
+                            //def sqlContent = sh(script: "cat ${SQL_SCRIPT}", returnStdout: true).trim()
                             echo "1"
-                            openshift.selector('pod', POD_NAME).exec('/bin/sh', '-c', "echo '${sqlContent}' > /tmp/script.sql")
+                            openshift.selector('pod', POD_NAME).exec('/bin/sh', '-c', "scp ${SQL_SCRIPT} /tmp/")
                             echo "SQL script copied to pod: ${POD_NAME}"
                         }
                     }
