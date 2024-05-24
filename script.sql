@@ -58,7 +58,7 @@ INSERT INTO departments (department_id, department_name, manager_id, location, p
 (12, 'Admin', 12, 'Atlanta', '555-1110', 40000.00),
 (13, 'Support', 13, 'Portland', '555-1120', 48000.00),
 (14, 'Operations', 14, 'Phoenix', '555-1130', 85000.00),
-(15, 'Training', 15, 'Philadelphia', '555-1140', 50000.00),
+(15, 'Training', 15, 'Piladelphia', '555-1140', 50000.00),
 (16, 'Quality Assurance', 16, 'Detroit', '555-1150', 55000.00),
 (17, 'Compliance', 17, 'San Antonio', '555-1160', 60000.00),
 (18, 'Design', 18, 'Minneapolis', '555-1170', 75000.00),

@@ -6,7 +6,7 @@ pipeline {
         SQL_SCRIPT = '${WORKSPACE}/script.sql' // Path to your .sql script in the workspace
         POSTGRES_USER = 'postgres-user' // Adjust as necessary
         POSTGRES_DB = 'postgres' // Adjust as necessary
-        GIT_URL = 'https://github.com/Sahilsinghss/postgres-tables.git'
+        GIT_URL = 'https://github.com/Sahilsinghss/postgres-tables.git' //git url
         GIT_CREDS = 'jenkins'
         GIT_BRANCH = 'main'
         OPENSHIFTCREDENTIALS = credentials('postgres-token-oc')
