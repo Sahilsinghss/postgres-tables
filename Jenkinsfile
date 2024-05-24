@@ -3,7 +3,7 @@ pipeline {
     environment {
         OPENSHIFT_PROJECT = 'devopsdaemon-dev'
         POD_NAME = 'postgres-deployment-b4496ff5-nm8ws' // Directly specify the pod name
-        SQL_SCRIPT = '${WORKSPACE}/script.sql' // Path to your .sql script in the workspace
+        SQL_SCRIPT = 'script.sql' // Path to your .sql script in the workspace
         POSTGRES_USER = 'postgres-user' // Adjust as necessary
         POSTGRES_DB = 'postgres' // Adjust as necessary
         GIT_URL = 'https://github.com/Sahilsinghss/postgres-tables.git' // Git URL
