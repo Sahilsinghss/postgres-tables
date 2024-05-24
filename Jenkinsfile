@@ -41,11 +41,11 @@ pipeline {
                             echo "4"
 
                             // Ensure there's at least one pod
-                            if (podNames.size() == 0) {
-                                error "No pods found for deployment: ${DEPLOYMENT_NAME}"
-                                echo "5"
-                            }
-                            echo "6"
+                            // if (podNames.size() == 0) {
+                            //     error "No pods found for deployment: ${DEPLOYMENT_NAME}"
+                            //     echo "5"
+                            // }
+                            // echo "6"
 
                             // Get the name of the first pod
                             def podName = podNames[0]
