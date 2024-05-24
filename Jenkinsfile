@@ -43,7 +43,9 @@ pipeline {
                             // Ensure there's at least one pod
                             if (podNames.size() == 0) {
                                 error "No pods found for deployment: ${DEPLOYMENT_NAME}"
+                                echo "5"
                             }
+                            echo "6"
 
                             // Get the name of the first pod
                             def podName = podNames[0]
@@ -51,9 +53,9 @@ pipeline {
 
                             // Copy the SQL script to the pod
                             def sqlContent = readFile(file: SQL_SCRIPT)
-                            echo "5"
+                            echo "7"
                             openshift.selector('pod', podName).exec('/bin/sh', '-c', "echo '${sqlContent}' > /tmp/script.sql")
-                            echo "6"
+                            echo "8"
                         }
                     }
                 }
