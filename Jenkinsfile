@@ -39,6 +39,7 @@ pipeline {
 
                             // Copy the SQL script to the pod
                             def sqlContent = readFile(file: SQL_SCRIPT)
+                            echo "1"
                             openshift.selector('pod', POD_NAME).exec('/bin/sh', '-c', "echo '${sqlContent}' > /tmp/script.sql")
                             echo "SQL script copied to pod: ${POD_NAME}"
                         }
