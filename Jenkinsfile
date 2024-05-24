@@ -35,7 +35,7 @@ pipeline {
                         openshift.withProject(OPENSHIFT_PROJECT) {
                             // Get the pods associated with the deployment
                             echo "2"
-                            def pods = openshift.selector('deploymentconfig', DEPLOYMENT_NAME).related('pods')
+                            def pods = openshift.selector('deployment', DEPLOYMENT_NAME).related('pods')
                             echo "3"
                             def podNames = pods.names()
                             echo "4"
